@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react' 
 import Toggle from './Toggle'
 
-const date = new Date().toLocaleDateString()
+
 
 function NoteForm ({ onSubmit }) {
   const [newNote, setNewNotes] = useState('')
