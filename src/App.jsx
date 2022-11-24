@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect } from "react"
 import "./App.css"
 
-import NoteCard from "./components/NoteCard"
-import NoteModal from "./components/NoteModal"
+import NoteCard from "./components/NoteCard/NoteCard"
+import NoteModal from "./components/NoteModal/NoteModal"
 
 function App() {
   const [notes, setNotes] = useState([])
@@ -34,7 +34,6 @@ function App() {
   }
 
   const handleDelete = (id) => {
-    console.log(id);
     setNotes((notes) => notes.filter((note) => note.id !== id));
   }
 
@@ -59,8 +58,6 @@ function App() {
 
   const addNote = (noteObject) => {
     if(draft?.id) {
-      console.log('update')
-      console.log(draft)
       setNotes((notes) =>
       notes.map((note) => {
         if (note.id !== draft.id) return note
@@ -74,7 +71,6 @@ function App() {
       )
       
     } else {
-      console.log('create')
       const newNote = {
         ...noteObject,
         id: notes.length + 1

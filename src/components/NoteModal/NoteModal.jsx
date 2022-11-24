@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../App.css'
+import './NoteModal.css'
 
 function NoteModal ({onClose, addNote, note}) {
   const [newNote, setNewNote] = useState('')
@@ -20,7 +20,6 @@ function NoteModal ({onClose, addNote, note}) {
     addNote(noteObject)
     setNewNote('')
   }
-
 
   return(
     <section id="container-modal" className="nes-dialog">
